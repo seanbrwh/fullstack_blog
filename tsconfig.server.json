@@ -1,0 +1,31 @@
+{
+    "compilerOptions": {
+      /* Basic Options */
+      "target": "es6",                          // Specify ECMAScript target version
+      "module": "CommonJS",                     // Specify module code generation
+      "rootDir": "./src/server",                       // Specify the root directory of input files
+      "outDir": "./dist/server",                       // Specify the output directory for compiled files
+      "esModuleInterop": true,                  // Enables compatibility with Babel-style module imports
+      "strict": true,                           // Enable all strict type-checking options
+      "skipLibCheck": true,                     // Skip type checking of declaration files
+  
+      /* Additional Checks */
+      "noImplicitAny": true,                    // Raise error on expressions and declarations with an implied 'any' type
+      "strictNullChecks": true,                 // Enable strict null checks
+  
+      /* Module Resolution Options */
+      "moduleResolution": "node",               // Use Node.js style module resolution
+      "resolveJsonModule": true,                // Include modules imported with '.json' extension
+  
+      /* Advanced Options */
+      "removeComments": true                    // Do not emit comments to output
+    },
+    "include": [
+      "src/server/**/*"                         // Include all files in the src folder
+    ],
+    "exclude": [
+      "node_modules",                           // Exclude the node_modules directory
+      "**/*.test.ts"                            // Exclude test files
+    ]
+  }
+  
