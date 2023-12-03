@@ -1,0 +1,12 @@
+language: node_js
+dist: bionic
+node_js:
+  - "20"
+
+script:
+  - npm i -g yarn
+  - yarn install
+  # - yarn test
+
+after_success:
+  - ./deploy.sh
