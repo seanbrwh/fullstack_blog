@@ -1,11 +1,16 @@
 #!/bin/bash
 
+# Start ssh-agent in the background
+eval "$(ssh-agent -s)"
+
 # Add SSH key and set permissions
 chmod 600 fullstack_blog.pem
 ssh-add fullstack_blog.pem
 
 # SSH into your EC2 instance and deploy
 ssh -o StrictHostKeyChecking=no ubuntu@ec2-54-234-80-14.compute-1.amazonaws.com << 'ENDSSH'
+
+# Change to the application directory
 cd /home/blog
 
 # Pull the latest code
@@ -19,4 +24,5 @@ yarn build
 
 # Start or restart the application using PM2
 pm2 restart your-app-name || pm2 start /dist/server/index.cjs --name your-app-name
+
 ENDSSH
