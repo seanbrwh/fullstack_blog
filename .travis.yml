@@ -1,12 +1,12 @@
 language: node_js
 dist: focal
 node_js:
-  - 20
-
+- 20
 script:
-  - npm i -g yarn
-  - yarn install
-  # - yarn test
-
+- npm i -g yarn
+- yarn install
 after_success:
-  - ./deploy.sh
+- "./deploy.sh"
+before_install:
+- openssl aes-256-cbc -K $encrypted_b9dfb482e190_key -iv $encrypted_b9dfb482e190_iv
+  -in fullstack_blog.pem.enc -out fullstack_blog.pem -d
