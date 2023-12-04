@@ -5,7 +5,7 @@ chmod 600 fullstack_blog.pem
 ssh-add fullstack_blog.pem
 
 # SSH into your EC2 instance and deploy
-ssh ubuntu@ec2-54-234-80-14.compute-1.amazonaws.com << 'ENDSSH'
+ssh -o StrictHostKeyChecking=no ubuntu@ec2-54-234-80-14.compute-1.amazonaws.com << 'ENDSSH'
 cd /home/blog
 
 # Pull the latest code
